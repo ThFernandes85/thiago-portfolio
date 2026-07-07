@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finalizar Compra | AquaCascata</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 2c-2.5 3-4 5.5-4 8a4 4 0 0 0 8 0c0-2.5-1.5-5-4-8Z" fill="#2e86ab"/></svg>
+      AquaCascata
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Início</a>
+      <a href="index.html#produto">Sobre</a>
+      <a href="index.html#instalacao">Instalação</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="checkout-wrap">
+      <h1>Finalizar Compra</h1>
+
+      <div id="checkoutEmpty" class="hidden" style="text-align:center;padding:20px 0 30px;color:var(--text-muted);">
+        Seu carrinho está vazio. <a href="index.html#produto" style="color:var(--accent);font-weight:700;">Voltar para o produto</a>
+      </div>
+
+      <form id="checkoutForm">
+        <div class="form-section">
+          <h2>Resumo do Pedido</h2>
+          <div id="orderSummary" class="cart-items" style="padding:0 0 16px;"></div>
+        </div>
+
+        <div class="form-section">
+          <h2>Informações de Entrega</h2>
+          <div class="form-grid">
+            <div class="field"><label for="fName">Nome</label><input type="text" id="fName" required><span class="field-error">Informe seu nome completo.</span></div>
+            <div class="field"><label for="fContact">Contato (e-mail ou telefone)</label><input type="text" id="fContact" required><span class="field-error">Informe um e-mail ou telefone válido.</span></div>
+            <div class="field full"><label for="fAddress">Endereço</label><input type="text" id="fAddress" required><span class="field-error">Informe o endereço de entrega.</span></div>
+            <div class="field"><label for="fCep">CEP</label><input type="text" id="fCep" required placeholder="00000-000"><span class="field-error">Informe um CEP válido.</span></div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2>Método de Pagamento</h2>
+          <div class="payment-methods">
+            <label class="payment-option selected" id="optCard">
+              <div class="payment-option-head">
+                <input type="radio" name="payment" value="cartao" checked>
+                Cartão de Crédito
+                <svg width="22" height="14" viewBox="0 0 24 24" fill="none" style="margin-left:auto;"><rect x="1" y="4" width="22" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M1 9h22" stroke="currentColor" stroke-width="2"/></svg>
+              </div>
+              <div class="card-fields">
+                <input type="text" id="cardNumber" placeholder="Número do Cartão de Crédito">
+                <div class="row">
+                  <input type="text" id="cardExpiry" placeholder="Validade (MM/AA)">
+                  <input type="text" id="cardCvv" placeholder="CVV">
+                </div>
+              </div>
+            </label>
+            <label class="payment-option" id="optPix">
+              <div class="payment-option-head">
+                <input type="radio" name="payment" value="pix">
+                PIX
+              </div>
+              <div class="pix-box">
+                <span class="pix-badge">PIX</span>
+                <p>Pague instantaneamente. O QR Code é gerado na próxima etapa (simulado nesta demonstração).</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="order-total">
+          <span>Total</span>
+          <span id="orderTotal">R$ 0,00</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Finalizar Compra</button>
+        <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:14px;">
+          Pagamento simulado para fins de demonstração. Na versão final, esta etapa processa o pagamento real via Mercado Pago (cartão + PIX).
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 AquaCascata. Todos os direitos reservados.</span>
+      <span>Ambiente de checkout de demonstração.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

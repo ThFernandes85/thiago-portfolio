@@ -1,0 +1,28 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cascata para piscina em aco inox, vista frontal">
+  <defs>
+    <linearGradient id="steel1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f8fb"/>
+      <stop offset="0.5" stop-color="#c7d6df"/>
+      <stop offset="1" stop-color="#8fa5b3"/>
+    </linearGradient>
+    <linearGradient id="water1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bfe6f5" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#2e86ab" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="pool1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f6690"/>
+      <stop offset="1" stop-color="#123a52"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="#eaf4fa"/>
+  <rect x="0" y="230" width="400" height="70" fill="url(#pool1)"/>
+  <rect x="0" y="222" width="400" height="10" fill="#d7e7f0"/>
+  <path d="M130 40 C90 40 78 80 78 120 C78 165 108 195 150 200 L150 235 L210 235 L210 200 C168 190 150 165 150 120 C150 90 160 70 190 68 L190 40 Z" fill="url(#steel1)" stroke="#7f95a3" stroke-width="2"/>
+  <path d="M150 120 C150 165 168 190 210 200 L210 235" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="4"/>
+  <path d="M158 128 C160 165 176 185 205 196 L205 232 L188 232 L188 200 C160 190 145 168 143 128 Z" fill="url(#water1)"/>
+  <g stroke="#eaf6fb" stroke-width="2" stroke-linecap="round" opacity="0.85">
+    <path d="M165 200 L162 232"/>
+    <path d="M178 205 L176 232"/>
+    <path d="M192 200 L192 232"/>
+  </g>
+</svg>

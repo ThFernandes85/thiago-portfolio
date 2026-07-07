@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acompanhar Pedido | AquaCascata</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 2c-2.5 3-4 5.5-4 8a4 4 0 0 0 8 0c0-2.5-1.5-5-4-8Z" fill="#2e86ab"/></svg>
+      AquaCascata
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Início</a>
+      <a href="index.html#produto">Produto</a>
+      <a href="rastreio.html" class="active">Acompanhar Pedido</a>
+    </nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="track-box">
+      <h1 style="margin:0 0 8px;font-size:26px;">Acompanhar Pedido</h1>
+      <p style="color:var(--text-muted);margin-bottom:22px;">Informe o número do pedido recebido por e-mail após a compra.</p>
+      <form id="trackForm" style="display:flex;gap:10px;">
+        <input type="text" id="trackInput" placeholder="Ex: 384921" required style="flex:1;padding:13px 16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-page);">
+        <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
+      <div id="trackResult" class="track-result hidden"></div>
+      <p id="trackNotFound" class="hidden" style="color:#d64545;margin-top:18px;">Pedido não encontrado. Confira o número informado.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 AquaCascata. Todos os direitos reservados.</span>
+      <span>Rastreio simulado localmente — em produção, integrado à transportadora e à plataforma de e-commerce.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  const trackForm = document.getElementById('trackForm');
+  const trackResult = document.getElementById('trackResult');
+  const trackNotFound = document.getElementById('trackNotFound');
+
+  const STEPS = [
+    { label: 'Pedido confirmado', offsetDays: 0 },
+    { label: 'Pagamento aprovado', offsetDays: 0 },
+    { label: 'Em preparação', offsetDays: 1 },
+    { label: 'Enviado', offsetDays: 3 },
+    { label: 'Entregue', offsetDays: 7 },
+  ];
+
+  trackForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const id = document.getElementById('trackInput').value.trim();
+    const orders = JSON.parse(localStorage.getItem('aquacascata_orders') || '{}');
+    const order = orders[id];
+    trackResult.classList.add('hidden');
+    trackNotFound.classList.add('hidden');
+
+    if (!order) {
+      trackNotFound.classList.remove('hidden');
+      return;
+    }
+
+    const createdAt = new Date(order.createdAt);
+    const daysSince = Math.floor((Date.now() - createdAt.getTime()) / 86400000);
+
+    trackResult.innerHTML = `<p style="font-weight:700;margin-bottom:10px;">Pedido #${id} — ${order.paymentMethod === 'pix' ? 'PIX' : 'Cartão de Crédito'}</p>` +
+      STEPS.map(step => {
+        const done = daysSince >= step.offsetDays;
+        const date = new Date(createdAt.getTime() + step.offsetDays * 86400000);
+        return `<div class="track-step ${done ? 'done' : ''}">
+          <span class="dot"></span>
+          <div>
+            <div class="label">${step.label}</div>
+            <div class="date">${done ? date.toLocaleDateString('pt-BR') : 'previsto'}</div>
+          </div>
+        </div>`;
+      }).join('');
+
+    trackResult.classList.remove('hidden');
+  });
+</script>
+</body>
+</html>

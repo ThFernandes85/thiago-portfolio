@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedido Confirmado | AquaCascata</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M12 2c-2.5 3-4 5.5-4 8a4 4 0 0 0 8 0c0-2.5-1.5-5-4-8Z" fill="#2e86ab"/></svg>
+      AquaCascata
+    </a>
+    <nav class="main-nav"><a href="index.html">Início</a></nav>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="confirm-box">
+      <div class="confirm-icon">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h1 style="margin:0 0 8px;font-size:26px;">Pedido confirmado!</h1>
+      <p style="color:var(--text-muted);">Obrigado pela compra. Enviamos um e-mail de confirmação simulado para o contato informado.</p>
+      <div class="confirm-order-id" id="orderIdBox">Pedido #000000</div>
+      <p style="color:var(--text-muted);font-size:14px;">
+        Use o número do pedido acima na página <a href="rastreio.html" style="color:var(--accent);font-weight:700;">Acompanhar Pedido</a> para ver o status da entrega.
+      </p>
+      <a href="index.html" class="btn btn-primary" style="margin-top:20px;">Voltar para a loja</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 AquaCascata. Todos os direitos reservados.</span>
+      <span>Confirmação simulada — em produção, disparada por e-mail real via a plataforma escolhida (Shopify/WooCommerce).</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const orderId = params.get('pedido');
+  if (orderId) {
+    document.getElementById('orderIdBox').textContent = 'Pedido #' + orderId;
+  } else {
+    window.location.href = 'index.html';
+  }
+</script>
+</body>
+</html>
