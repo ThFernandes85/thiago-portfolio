@@ -1,0 +1,37 @@
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Corte esquematico do sistema hidraulico da cascata">
+  <defs>
+    <linearGradient id="deckH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e7d9c4"/>
+      <stop offset="1" stop-color="#cbb999"/>
+    </linearGradient>
+    <linearGradient id="steelH" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f8fb"/>
+      <stop offset="1" stop-color="#8fa5b3"/>
+    </linearGradient>
+    <linearGradient id="soilH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9b28c"/>
+      <stop offset="1" stop-color="#a3875e"/>
+    </linearGradient>
+    <marker id="arrowH" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#2e86ab"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="150" width="460" height="150" fill="url(#soilH)"/>
+  <rect x="0" y="130" width="180" height="22" fill="url(#deckH)"/>
+  <rect x="280" y="130" width="180" height="22" fill="url(#deckH)"/>
+
+  <path d="M180 70 C155 72 145 100 148 128 C151 154 168 172 195 176 L195 200 L225 200 L225 176 C250 170 264 150 260 126 C256 100 236 78 210 70 Z"
+        fill="url(#steelH)" stroke="#7f95a3" stroke-width="2"/>
+  <path d="M195 130 C197 155 208 168 218 172 L218 198 L204 198 L204 176 C194 168 187 154 185 130 Z" fill="#bfe6f5" opacity="0.9"/>
+
+  <path d="M210 210 L210 240 L150 240 L150 200" fill="none" stroke="#7f95a3" stroke-width="10" stroke-linecap="round"/>
+  <path d="M210 210 L210 240 L150 240 L150 200" fill="none" stroke="#2e86ab" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 10" marker-end="url(#arrowH)"/>
+
+  <rect x="118" y="228" width="40" height="30" rx="4" fill="#4a6572"/>
+  <text x="138" y="248" font-size="9" fill="#fff" text-anchor="middle">Bomba</text>
+
+  <line x1="20" y1="70" x2="20" y2="152" stroke="#8fa5b3" stroke-width="1"/>
+  <line x1="16" y1="70" x2="24" y2="70" stroke="#8fa5b3" stroke-width="1"/>
+  <line x1="16" y1="152" x2="24" y2="152" stroke="#8fa5b3" stroke-width="1"/>
+</svg>

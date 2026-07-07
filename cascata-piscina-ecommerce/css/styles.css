@@ -624,6 +624,81 @@ section { padding: 72px 0; }
 .confirm-icon { width: 72px; height: 72px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
 .confirm-order-id { display: inline-block; background: var(--bg-page); padding: 10px 22px; border-radius: var(--radius-pill); font-weight: 800; letter-spacing: 0.04em; margin: 14px 0 26px; }
 
+/* ---------- Compare banner ---------- */
+.compare-section { padding: 0; }
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.compare-panel {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  padding: 32px;
+  overflow: hidden;
+}
+.compare-panel.good { background: linear-gradient(180deg, #123a52, #0b2436); }
+.compare-panel.plain { background: linear-gradient(180deg, #4a6572, #2c3e46); }
+.compare-panel .art { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); width: 70%; opacity: 0.9; }
+.compare-panel h3 {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+.compare-panel.plain h3 { color: rgba(255, 255, 255, 0.7); }
+
+/* ---------- How it works (hydraulic diagram) ---------- */
+.how-it-works-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.diagram-card { background: var(--bg-white); border-radius: var(--radius-card); box-shadow: var(--shadow-sm); border: 1px solid var(--border); padding: 30px; }
+.diagram-card img { width: 100%; }
+.callout-list { display: flex; flex-direction: column; gap: 26px; }
+.callout-item { display: flex; gap: 16px; }
+.callout-icon {
+  width: 44px; height: 44px; border-radius: 12px; background: var(--accent-light); color: var(--accent);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.callout-item h3 { margin: 0 0 6px; font-size: 17px; }
+.callout-item p { margin: 0; color: var(--text-muted); font-size: 14.5px; }
+
+/* ---------- Installation detail section ---------- */
+.install-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.video-placeholder {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-card);
+  background: linear-gradient(160deg, #123a52, #08131d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.video-placeholder .play-btn {
+  width: 64px; height: 64px; border-radius: 50%; background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.6); display: flex; align-items: center; justify-content: center;
+  color: #fff; transition: background 0.15s ease;
+}
+.video-placeholder:hover .play-btn { background: rgba(255, 255, 255, 0.3); }
+.video-placeholder .video-caption {
+  position: absolute; left: 20px; bottom: 16px; color: #fff; font-weight: 700; font-size: 14px;
+}
+.install-mini-steps { list-style: none; margin: 20px 0 0; padding: 0; counter-reset: step; }
+.install-mini-steps li {
+  counter-increment: step;
+  display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px dashed var(--border);
+}
+.install-mini-steps li::before {
+  content: counter(step);
+  width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff;
+  font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.install-mini-steps p { margin: 0; color: var(--text-muted); font-size: 14.5px; }
+.install-mini-steps b { display: block; color: var(--text-dark); font-size: 15px; margin-bottom: 2px; }
+
 /* ---------- Mobile ---------- */
 @media (max-width: 900px) {
   .grid-3 { grid-template-columns: 1fr; }
@@ -632,6 +707,9 @@ section { padding: 72px 0; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .hero h1 { font-size: 36px; }
   .hero-illustration { display: none; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .how-it-works-grid { grid-template-columns: 1fr; }
+  .install-detail-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 720px) {
