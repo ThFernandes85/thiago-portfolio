@@ -101,7 +101,8 @@ footer{padding:38px 0 60px;display:flex;flex-wrap:wrap;justify-content:space-bet
 .fk-cat .cats{display:flex;gap:10px;font-size:9px;color:#8a7f7d;letter-spacing:.08em;text-transform:uppercase}
 .fk-cat .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:16px 20px}
 .fk-cat .card{background:#fff;border:1px solid #eadfdd;border-radius:8px;padding:8px;display:flex;flex-direction:column;gap:5px}
-.fk-cat .card .ph{aspect-ratio:1;background:#f0dede;border-radius:5px}
+.fk-cat .card .ph{aspect-ratio:1;background:#f0dede;border-radius:5px;display:flex;align-items:center;justify-content:center}
+.fk-cat .card .ph svg{width:52%;height:52%}
 .fk-cat .card b{font-size:9.5px;font-weight:500;color:#4a4241}
 .fk-cat .card span{font-family:'JetBrains Mono',monospace;font-size:9px;color:#9e1922}
 .fk-admin{background:#f7f2f1;color:#282828;padding:14px}
@@ -182,10 +183,10 @@ footer{padding:38px 0 60px;display:flex;flex-wrap:wrap;justify-content:space-bet
         <div class="fk fk-cat">
           <div class="top"><span class="logo">Catálogo Exemplo</span><div class="cats"><span>Anéis</span><span>Brincos</span><span>Colares</span><span>Pulseiras</span></div></div>
           <div class="grid">
-            <div class="card"><div class="ph"></div><b>Anel Riviera Cravejado</b><span>R$ 189,00</span></div>
-            <div class="card"><div class="ph"></div><b>Brinco Argola Texturizada</b><span>R$ 129,00</span></div>
-            <div class="card"><div class="ph"></div><b>Colar Ponto de Luz</b><span>R$ 219,00</span></div>
-            <div class="card"><div class="ph"></div><b>Pulseira Riviera Baguete</b><span>R$ 249,00</span></div>
+            <div class="card"><div class="ph"><svg viewBox="0 0 40 40" fill="none" stroke="#9e1922" stroke-width="1.5"><circle cx="20" cy="24" r="10"/><path d="M15 14l5-6 5 6" stroke-linejoin="round"/><circle cx="20" cy="8" r="2" fill="#9e1922"/></svg></div><b>Anel Riviera Cravejado</b><span>R$ 189,00</span></div>
+            <div class="card"><div class="ph"><svg viewBox="0 0 40 40" fill="none" stroke="#9e1922" stroke-width="1.5"><circle cx="20" cy="14" r="7"/><path d="M20 21v9" stroke-linecap="round"/><circle cx="20" cy="33" r="3" fill="#9e1922" stroke="none"/></svg></div><b>Brinco Argola Texturizada</b><span>R$ 129,00</span></div>
+            <div class="card"><div class="ph"><svg viewBox="0 0 40 40" fill="none" stroke="#9e1922" stroke-width="1.5"><path d="M6 10c0 12 8 18 14 18s14-6 14-18" stroke-linecap="round"/><path d="M17 27l3 6 3-6" stroke-linejoin="round" fill="#f5afbb"/></svg></div><b>Colar Ponto de Luz</b><span>R$ 219,00</span></div>
+            <div class="card"><div class="ph"><svg viewBox="0 0 40 40" fill="none" stroke="#9e1922" stroke-width="1.5"><ellipse cx="20" cy="20" rx="14" ry="9"/><circle cx="6" cy="20" r="1.6" fill="#9e1922" stroke="none"/><circle cx="34" cy="20" r="1.6" fill="#9e1922" stroke="none"/></svg></div><b>Pulseira Riviera Baguete</b><span>R$ 249,00</span></div>
           </div>
         </div>
       </div>
