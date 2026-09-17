@@ -153,15 +153,18 @@ footer{padding:38px 0 60px;display:flex;flex-wrap:wrap;justify-content:space-bet
 .fk-ops .legend{display:flex;gap:12px;margin-top:6px;font-size:7px;color:#8b8f99}
 .fk-ops .legend span{display:inline-flex;align-items:center;gap:4px}
 .fk-ops .legend i{width:6px;height:6px;border-radius:2px;display:inline-block}
-.fk-bank{background:#fff;color:#1a1a1a;padding:14px;font-family:'Archivo',sans-serif}
-.fk-bank .bal{font-size:8.5px;color:#8b8f99;margin-bottom:2px}
-.fk-bank .val{font-size:20px;font-weight:700;margin-bottom:10px}
-.fk-bank .tx{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eee;font-size:9px}
-.fk-bank .tx span:last-child{font-weight:600}
-.fk-bank .actions{display:flex;gap:8px;margin-bottom:12px}
-.fk-bank .actions div{flex:1;background:#f4f4f4;border-radius:8px;padding:8px 4px;text-align:center;font-size:7.5px;color:#444}
-.fk-bank .actions div b{display:block;font-size:12px;margin-bottom:3px}
-.fk-bank .lbl{font-size:8px;color:#8b8f99;letter-spacing:.06em;margin-bottom:6px;text-transform:uppercase}
+.fk-bank{background:#f2f2f5;color:#1a1a1a;font-family:'Archivo',sans-serif}
+.fk-bank .hero{background:linear-gradient(to right,rgb(138,43,226),rgb(164,60,240));color:#fff;padding:16px}
+.fk-bank .hero small{font-size:8px;opacity:.85;display:block;margin-bottom:2px}
+.fk-bank .hero h4{margin:0 0 8px;font-size:19px;font-weight:700}
+.fk-bank .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:12px}
+.fk-bank .stat{background:#fff;border-radius:8px;padding:8px}
+.fk-bank .stat b{display:block;font-size:14px}
+.fk-bank .stat span{font-size:7px;color:#8b8f99}
+.fk-bank .rank{margin:0 12px 12px;background:#fff;border-radius:8px;padding:8px}
+.fk-bank .rank .lbl{font-size:8px;color:#8b8f99;letter-spacing:.06em;margin-bottom:6px;text-transform:uppercase}
+.fk-bank .rank .tx{display:flex;justify-content:space-between;padding:4px 0;font-size:9px}
+.fk-bank .rank .tx span:last-child{font-weight:600;color:rgb(138,43,226)}
 </style>
 </head>
 <body>
@@ -260,7 +263,7 @@ footer{padding:38px 0 60px;display:flex;flex-wrap:wrap;justify-content:space-bet
       </div>
     </div>
 
-    <div class="thumb" style="margin-top:6px">
+    <div class="thumb" style="aspect-ratio:unset;margin-top:6px">
       <div class="fk fk-vendas">
         <div class="head">Painel de vendas</div>
         <div class="row">
@@ -300,7 +303,7 @@ footer{padding:38px 0 60px;display:flex;flex-wrap:wrap;justify-content:space-bet
     </div>
     <div class="cards" style="padding-top:16px">
       <div class="card">
-        <div class="thumb" style="aspect-ratio:16/10"><div class="fk fk-ops">
+        <div class="thumb" style="aspect-ratio:unset"><div class="fk fk-ops">
           <div class="h">VISÃO GERAL DO COMPLEXO</div>
           <div class="g">
             <div class="c"><b>94</b><span>ATIVOS MONITORADOS</span></div>
@@ -325,24 +328,27 @@ footer{padding:38px 0 60px;display:flex;flex-wrap:wrap;justify-content:space-bet
         <a class="entrega" href="https://terraviaops.netlify.app/" target="_blank" rel="noopener" style="color:var(--acc)">ver exemplo ao vivo ↗</a>
       </div>
       <div class="card">
-        <div class="thumb" style="aspect-ratio:16/10"><div class="fk fk-bank">
-          <div class="bal">SALDO EM CONTA</div>
-          <div class="val">R$ 3.482,10</div>
-          <div class="actions">
-            <div><b>↑</b>Pix</div>
-            <div><b>↓</b>Depositar</div>
-            <div><b>⇄</b>Transferir</div>
-            <div><b>▤</b>Extrato</div>
+        <div class="thumb" style="aspect-ratio:unset"><div class="fk fk-bank">
+          <div class="hero">
+            <small>BEM-VINDO AO</small>
+            <h4>Mini Bank</h4>
           </div>
-          <div class="lbl">Últimas transações</div>
-          <div class="tx"><span>Transferência recebida</span><span>+R$ 250,00</span></div>
-          <div class="tx"><span>Pagamento de fatura</span><span>-R$ 89,90</span></div>
-          <div class="tx"><span>Pix enviado</span><span>-R$ 40,00</span></div>
-          <div class="tx" style="border-bottom:none"><span>Rendimento CDB</span><span>+R$ 12,40</span></div>
+          <div class="stats">
+            <div class="stat"><b>2</b><span>CLIENTES CADASTRADOS</span></div>
+            <div class="stat"><b>2</b><span>CONTAS ATIVAS</span></div>
+            <div class="stat"><b>R$ 5.200</b><span>SALDO TOTAL DO BANCO</span></div>
+            <div class="stat"><b>R$ 5.200</b><span>TOTAL MOVIMENTADO</span></div>
+          </div>
+          <div class="rank">
+            <div class="lbl">Ranking público por saldo</div>
+            <div class="tx"><span>#1 · Conta 1</span><span>R$ 3.000,00</span></div>
+            <div class="tx"><span>#2 · Conta 2</span><span>R$ 2.200,00</span></div>
+          </div>
         </div></div>
         <b style="font-size:16px;font-weight:600">Mini Bank em Clojure</b>
-        <p class="body" style="font-size:14px">Simulação de um banco digital — contas, saldo e transações — como estudo de programação funcional em Clojure.</p>
-        <div class="chips" style="padding-top:2px"><span class="chip">Clojure</span></div>
+        <p class="body" style="font-size:14px">Simulador bancário full stack: autenticação JWT, transferências, extrato, ranking público por saldo e painel administrativo.</p>
+        <div class="chips" style="padding-top:2px"><span class="chip">Clojure + Ring</span><span class="chip">React + Vite</span><span class="chip">SQLite</span></div>
+        <a class="entrega" href="https://mini-bank-clojure.vercel.app/" target="_blank" rel="noopener" style="color:var(--acc)">ver exemplo ao vivo ↗</a>
       </div>
     </div>
   </section>
