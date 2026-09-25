@@ -169,6 +169,12 @@ footer{padding:38px 0 60px;display:flex;flex-wrap:wrap;justify-content:space-bet
 .fk-bank .rank .lbl{font-size:8px;color:#8b8f99;letter-spacing:.06em;margin-bottom:6px;text-transform:uppercase}
 .fk-bank .rank .tx{display:flex;justify-content:space-between;padding:4px 0;font-size:9px}
 .fk-bank .rank .tx span:last-child{font-weight:600;color:rgb(138,43,226)}
+.vid{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0c0d10}
+.vid video{width:100%;height:100%;display:block;object-fit:cover}
+.vid .play{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;padding:12px;background:none;border:0;cursor:pointer}
+.vid .play span{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--acc);color:#0c0d10;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;transition:transform .15s}
+.vid .play:hover span{transform:scale(1.05)}
+.vid.tocando .play{display:none}
 </style>
 </head>
 <body>
@@ -354,6 +360,16 @@ footer{padding:38px 0 60px;display:flex;flex-wrap:wrap;justify-content:space-bet
         <div class="chips" style="padding-top:2px"><span class="chip">Clojure + Ring</span><span class="chip">React + Vite</span><span class="chip">SQLite</span></div>
         <a class="entrega" href="https://mini-bank-clojure.vercel.app/" target="_blank" rel="noopener" style="color:var(--acc)">ver exemplo ao vivo ↗</a>
       </div>
+      <div class="card">
+        <div class="vid">
+          <video src="assets/consolidador-tutorial.mp4" poster="assets/consolidador-capa.jpg" muted playsinline preload="none" aria-label="Tutorial do Consolidador de Planilhas em 5 passos"></video>
+          <button class="play" type="button" aria-label="Assistir ao tutorial (47 segundos)"><span>▶ ASSISTIR · 47s</span></button>
+        </div>
+        <b style="font-size:16px;font-weight:600">Consolidador de Planilhas</b>
+        <p class="body" style="font-size:14px">Automação que junta dezenas de planilhas Excel e CSV — com todas as abas — em um único relatório com dados, resumo por arquivo e log de erros. Entregue como executável de dois cliques, com manual e vídeo: o usuário não precisa instalar nada nem saber programar.</p>
+        <div class="chips" style="padding-top:2px"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">openpyxl</span><span class="chip">PyInstaller</span></div>
+        <a class="entrega" href="https://wa.me/5531972683120?text=Ol%C3%A1%20Thiago!%20Vi%20o%20Consolidador%20de%20Planilhas%20no%20seu%20portf%C3%B3lio%20e%20quero%20uma%20vers%C3%A3o%20para%20a%20minha%20empresa." target="_blank" rel="noopener" style="color:var(--acc)">pedir versão personalizada ↗</a>
+      </div>
     </div>
   </section>
 
@@ -441,6 +457,14 @@ const io = new IntersectionObserver(es => {
   });
 }, { rootMargin: '-45% 0px -50% 0px' });
 secs.forEach(s => io.observe(s));
+
+// Vídeos com capa: os controles só aparecem depois do primeiro play
+document.querySelectorAll('.vid .play').forEach(botao => botao.addEventListener('click', () => {
+  const caixa = botao.closest('.vid'), video = caixa.querySelector('video');
+  caixa.classList.add('tocando');
+  video.controls = true;
+  video.play();
+}));
 </script>
 </body>
 </html>
