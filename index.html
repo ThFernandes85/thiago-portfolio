@@ -79,6 +79,7 @@ section{scroll-margin-top:74px}
 .about{padding:74px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;align-items:start}
 .foto{aspect-ratio:4/5;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);max-width:330px;display:flex;align-items:center;justify-content:center}
 .ph{font-family:'JetBrains Mono',monospace;font-size:12px;color:#4a505e;text-align:center;padding:20px}
+.foto img{width:100%;height:100%;object-fit:cover;display:block}
 .pill{padding:7px 13px;border-radius:999px;border:1px solid #23262f;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim2)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
 .serv b{font-size:16px;font-weight:600}
@@ -417,7 +418,7 @@ footer{padding:38px 0 60px;display:flex;flex-wrap:wrap;justify-content:space-bet
   </section>
 
   <section id="sobre" class="about">
-    <div class="foto"><div class="ph">sua foto (4:5)</div></div>
+    <div class="foto"><img src="assets/thiago-fernandes.jpg" alt="Thiago Fernandes na estação de trabalho, com código aberto no monitor" width="660" height="825" loading="lazy"></div>
     <div class="col" style="gap:16px">
       <div class="eyebrow">— SOBRE</div>
       <h2 style="font-size:clamp(22px,2.4vw,30px);font-weight:600;line-height:1.15;letter-spacing:-.01em;margin:0">Thiago Fernandes, engenheiro de software</h2>
