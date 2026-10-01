@@ -170,6 +170,42 @@ footer{padding:38px 0 60px;display:flex;flex-wrap:wrap;justify-content:space-bet
 .fk-bank .rank .lbl{font-size:8px;color:#8b8f99;letter-spacing:.06em;margin-bottom:6px;text-transform:uppercase}
 .fk-bank .rank .tx{display:flex;justify-content:space-between;padding:4px 0;font-size:9px}
 .fk-bank .rank .tx span:last-child{font-weight:600;color:rgb(138,43,226)}
+.fk-turma{background:#fff;color:#1B2333;padding:12px;font-family:'Archivo',sans-serif}
+.fk-turma .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.fk-turma .top b{font-size:12px}
+.fk-turma .top span{font-size:7.5px;color:#5B6475}
+.fk-turma .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:8px}
+.fk-turma .kpi{background:#F4F5F9;border:1px solid #E1E4EC;border-radius:7px;padding:6px 8px}
+.fk-turma .kpi span{display:block;font-size:7px;color:#5B6475;font-weight:600}
+.fk-turma .kpi b{display:block;font-size:13px;font-weight:700;color:#1B2333}
+.fk-turma .kpi i{font-style:normal;font-size:6.5px;color:#5B6475}
+.fk-turma .kpi.late{background:#FDE4E1}
+.fk-turma .kpi.late b,.fk-turma .kpi.late span,.fk-turma .kpi.late i{color:#A3190F}
+.fk-turma .lista{background:#F7F8FB;border:1px solid #E1E4EC;border-radius:7px;padding:7px}
+.fk-turma .lista .h{font-size:8px;font-weight:700;margin-bottom:5px}
+.fk-turma .lista .r{display:flex;justify-content:space-between;align-items:center;font-size:7.5px;padding:3px 0;border-top:1px solid #E1E4EC}
+.fk-turma .lista .r:first-child{border-top:0}
+.fk-turma .lista .r b{font-weight:600;white-space:nowrap}
+.fk-turma .lista .r span{color:#5B6475;flex:1;padding:0 6px;white-space:nowrap}
+.fk-turma .lista .r em{font-style:normal;background:#FDE4E1;color:#A3190F;border-radius:99px;padding:2px 6px;font-size:6.5px;font-weight:700;white-space:nowrap}
+.fk-estoque{background:#F3F6F4;color:#1A2B3C;padding:11px;font-family:'Archivo',sans-serif}
+.fk-estoque .top{background:#12263A;color:#fff;border-radius:7px;padding:7px 9px;margin-bottom:8px;display:flex;flex-direction:column;gap:1px}
+.fk-estoque .top b{font-size:10.5px}
+.fk-estoque .top span{font-size:7px;color:#A9BCCF}
+.fk-estoque .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:8px}
+.fk-estoque .kpi{background:#fff;border:1px solid #DCE3DF;border-radius:6px;padding:5px 6px}
+.fk-estoque .kpi span{display:block;font-size:6px;color:#56657A;font-weight:600}
+.fk-estoque .kpi b{display:block;font-size:11px;font-weight:700;color:#1A2B3C}
+.fk-estoque .kpi.warn{background:#FFF0BF}.fk-estoque .kpi.warn b{color:#7A4F00}
+.fk-estoque .kpi.err{background:#FDE3E1}.fk-estoque .kpi.err b{color:#A61B12}
+.fk-estoque .kpi.blue{background:#E4EEFA}.fk-estoque .kpi.blue b{color:#174A85}
+.fk-estoque .lista{background:#fff;border:1px solid #DCE3DF;border-radius:7px;padding:7px}
+.fk-estoque .lista .h{font-size:7.5px;font-weight:700;margin-bottom:5px;color:#56657A;text-transform:uppercase;letter-spacing:.04em}
+.fk-estoque .lista .r{display:flex;justify-content:space-between;align-items:center;font-size:7.5px;padding:3px 0;border-top:1px solid #F0F3F1}
+.fk-estoque .lista .r:first-child{border-top:0}
+.fk-estoque .lista .r b{font-weight:600}
+.fk-estoque .lista .r span{color:#56657A}
+.fk-estoque .lista .r em{font-style:normal;background:#FDE3E1;color:#A61B12;border-radius:4px;padding:2px 6px;font-size:6.5px;font-weight:700}
 .vid{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0c0d10}
 .vid video{width:100%;height:100%;display:block;object-fit:cover}
 .vid .play{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;padding:12px;background:none;border:0;cursor:pointer}
@@ -399,6 +435,48 @@ footer{padding:38px 0 60px;display:flex;flex-wrap:wrap;justify-content:space-bet
         <p class="body" style="font-size:14px">Automação que junta dezenas de planilhas Excel e CSV — com todas as abas — em um único relatório com dados, resumo por arquivo e log de erros. Entregue como executável de dois cliques, com manual e vídeo: o usuário não precisa instalar nada nem saber programar.</p>
         <div class="chips" style="padding-top:2px"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">openpyxl</span><span class="chip">PyInstaller</span></div>
         <a class="entrega" href="https://wa.me/5531972683120?text=Ol%C3%A1%20Thiago!%20Vi%20o%20Consolidador%20de%20Planilhas%20no%20seu%20portf%C3%B3lio%20e%20quero%20uma%20vers%C3%A3o%20para%20a%20minha%20empresa." target="_blank" rel="noopener" style="color:var(--acc)">pedir versão personalizada ↗</a>
+      </div>
+      <div class="card">
+        <div class="thumb" style="aspect-ratio:unset"><div class="fk fk-turma">
+          <div class="top"><b>Olá, Academia Vitória</b><span>quinta-feira, 1 de outubro</span></div>
+          <div class="kpis">
+            <div class="kpi"><span>Alunos ativos</span><b>58</b><i>6 turmas</i></div>
+            <div class="kpi"><span>Recebido em out.</span><b>R$ 4.120</b><i>de R$ 5.300 previstos</i></div>
+            <div class="kpi late"><span>Mensalidades atrasadas</span><b>4 alunos</b><i>R$ 680 em aberto</i></div>
+            <div class="kpi"><span>Presença hoje</span><b>22</b><i>na chamada</i></div>
+          </div>
+          <div class="lista">
+            <div class="h">Quem está atrasado</div>
+            <div class="r"><b>Marcos Vinícius</b><span>Jiu-jítsu · out/26</span><em>Atrasado 4 dias</em></div>
+            <div class="r"><b>Ana Beatriz</b><span>Natação · out/26</span><em>Atrasado 1 dia</em></div>
+          </div>
+        </div></div>
+        <b style="font-size:16px;font-weight:600">Turma em Dia</b>
+        <p class="body" style="font-size:14px">Sistema web para academias e escolinhas (futebol, natação, dança, lutas): alunos, mensalidades com lembrete e cobrança pelo WhatsApp, turmas e horários e chamada pelo celular. Um app e um banco isolado por cliente, com login próprio, hospedado na nuvem.</p>
+        <div class="chips" style="padding-top:2px"><span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">SQLAlchemy</span><span class="chip">Supabase / PostgreSQL</span></div>
+        <a class="entrega" href="https://wa.me/5531972683120?text=Ol%C3%A1%20Thiago!%20Vi%20o%20Turma%20em%20Dia%20no%20seu%20portf%C3%B3lio%20e%20quero%20saber%20mais%20para%20a%20minha%20academia." target="_blank" rel="noopener" style="color:var(--acc)">pedir versão personalizada ↗</a>
+      </div>
+      <div class="card">
+        <div class="thumb" style="aspect-ratio:unset"><div class="fk fk-estoque">
+          <div class="top"><b>Controle de Estoque</b><span>Mercadinho Bom Preço</span></div>
+          <div class="kpis">
+            <div class="kpi"><span>Produtos</span><b>312</b></div>
+            <div class="kpi"><span>Estoque a custo</span><b>R$ 18,4k</b></div>
+            <div class="kpi"><span>A preço de venda</span><b>R$ 27,1k</b></div>
+            <div class="kpi warn"><span>Para comprar</span><b>14</b></div>
+            <div class="kpi err"><span>Vencem em 30d</span><b>6</b></div>
+            <div class="kpi blue"><span>Vendas no mês</span><b>R$ 9.850</b></div>
+          </div>
+          <div class="lista">
+            <div class="h">Estoque baixo ou zerado</div>
+            <div class="r"><b>Refri lata 350ml</b><span>2 un.</span><em>BAIXO</em></div>
+            <div class="r"><b>Pão de forma</b><span>0 un.</span><em>ZERADO</em></div>
+          </div>
+        </div></div>
+        <b style="font-size:16px;font-weight:600">Controle de Estoque + Caixa</b>
+        <p class="body" style="font-size:14px">Programa para computador (Windows, sem precisar de internet) para lanchonetes, mercearias e pequenos comércios: estoque com leitor de código de barras, alerta de item acabando e validade próxima, frente de caixa com troco e fechamento do dia, relatórios em Excel e backup automático. Entregue como instalador de dois cliques, com manual.</p>
+        <div class="chips" style="padding-top:2px"><span class="chip">Python</span><span class="chip">CustomTkinter</span><span class="chip">SQLite</span><span class="chip">PyInstaller</span></div>
+        <a class="entrega" href="https://wa.me/5531972683120?text=Ol%C3%A1%20Thiago!%20Vi%20o%20Controle%20de%20Estoque%20no%20seu%20portf%C3%B3lio%20e%20quero%20uma%20vers%C3%A3o%20para%20o%20meu%20com%C3%A9rcio." target="_blank" rel="noopener" style="color:var(--acc)">pedir versão personalizada ↗</a>
       </div>
     </div>
   </section>
